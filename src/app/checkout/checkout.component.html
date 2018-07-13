@@ -1,0 +1,37 @@
+<div *ngIf="showCartContents" class="modal-background" (click)="closeCart()">
+    <div class="modal">
+        <div class="modal-header">
+            <h2>Your Cart Contains:</h2>
+            <span class="close" (click)="closeCart()"><i class="fa fa-times"></i></span>
+        </div>
+        <div class="modal-content">
+            <div *ngIf="cartContentTotal === 0">Your cart is empty.</div>
+            <div *ngIf="totalA !== 0" class="modal-item">{{items[0].name}}: {{totalA}}</div>
+            <div *ngIf="totalB !== 0" class="modal-item">{{items[1].name}}: {{totalB}}</div>
+            <div *ngIf="totalC !== 0" class="modal-item">{{items[2].name}}: {{totalC}}</div>
+            <div *ngIf="totalD !== 0" class="modal-item">{{items[3].name}}: {{totalD}}</div>
+        </div>
+
+    </div>
+</div>
+
+<div>
+    <div class="item-container">
+        <div class="items" *ngFor="let item of items">
+            <div class="item">
+                <p class="item-name">{{item.name}}</p>
+                <p class="item-price">Price: {{item.price | currency : 'GBP'}}</p>
+                <p class="item-offer" *ngIf="item.offer"><i class="offer-star fa fa-star"></i>Offer: {{item.offer}}</p>
+            </div>
+            <div class="add-to-cart">
+                <button id={{item.id}} class="btn" (click)="addToCart(item.id, item.price)">Add to Cart <i class="fa fa-cart-arrow-down"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="cart-contents">
+        <button class="btn show-cart-btn" (click)="showCart()"><span class="show-cart-text">View Cart</span> <i class="fa fa-shopping-cart"></i><span
+                class="cart-content-total">{{cartContentTotal}}</span></button>
+    </div>
+    <div class="cart-total">Cart Total: {{cartTotal | currency : 'GBP'}}</div>
+    <button id="reset" class="btn" (click)="resetCart()">Empty Cart</button>
+</div>

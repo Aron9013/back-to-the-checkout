@@ -1,0 +1,132 @@
+* {
+    text-align: center;
+}
+
+.btn {
+    padding: 10px;
+    background: linear-gradient(141deg, #33b7b8 0%, #7dd7db 38%, #8ecae8 75%);
+    border: 2px solid #7d7d7d;
+    font-size: 16px;
+    border-radius: 5px;
+    i {
+        font-size: 18px;
+    }
+}
+
+.show-cart-btn {
+    i {
+        font-size: 30px;
+    }
+
+    .show-cart-text {
+        position: relative;
+        top: -5px;
+        margin-right: 10px;
+    }
+
+    .cart-content-total {
+        color: #dadada;
+        position: relative;
+        font-size: 14px;
+        font-weight: 700;
+        left: -17px;
+        top: -10px;
+    }
+}
+
+.item-container {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.items {
+    border: 1px solid #6e6e6e;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    height: auto;
+    width: auto;
+    margin: 0 10px;
+    background: rgba(153, 200, 213, 0.4)
+}
+
+.item {
+    height: 150px;
+
+    &-name, &-price {
+        height: 25px;
+    }
+
+    &-offer {
+        height: 30px;
+        padding-top: 15px;
+        border-top: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
+    }
+
+    .offer-star {
+        margin-right: 5px;
+    }
+}
+
+.cart-contents, .cart-total {
+    margin: 10px 0;
+}
+
+.cart-total {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.modal-background {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    width: 100%
+}
+
+.modal {
+    width: 400px;
+    background: white;
+    margin: 50px auto;
+
+    &-header {
+        width: 100%;
+        display: inline-block;
+        border-bottom: 2px solid #999;
+        background: #97cee0;
+        h2 {
+            margin-bottom: 0;
+        }
+
+        .close {
+            cursor: pointer;
+            padding: 10px;
+            position: relative;
+            bottom: 35px;
+            left: 180px;
+        }
+    }
+
+    &-content {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    &-item {
+        padding: 10px;
+        border-bottom: 1px solid #cccccc;
+
+        &:last-child {
+            border: none;
+        }
+    }
+}
